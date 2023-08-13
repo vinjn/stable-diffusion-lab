@@ -1,11 +1,20 @@
+@REM git clone
+git clone https://github.com/kohya-ss/sd-scripts.git
+
+mkdir _train_data
+mkdir _log
+mkdir _output
+
+@REM sd-scripts
+
+pushd sd-scripts
+git pull
 IF NOT EXIST venv (
     echo Creating venv...
     python -m venv venv
 )
 
-call %~dp0venv\Scripts\activate.bat
-
-cd sd-scripts
+call venv\Scripts\activate.bat
 
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install --upgrade -r requirements.txt
@@ -18,3 +27,4 @@ copy /Y .\bitsandbytes_windows\main.py ..\venv\Lib\site-packages\bitsandbytes\cu
 accelerate config
 
 call deactivate.bat
+popd
