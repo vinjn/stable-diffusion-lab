@@ -4,7 +4,7 @@
 SCRIPT_DIR=$(dirname ${BASH_SOURCE})
 
 # Train data path | 设置训练用模型、图片
-pretrained_model="$SCRIPT_DIR/../stable-diffusion-webui/models/Stable-diffusion/deliberate_v2.safetensors" # base model path | 底模路径
+pretrained_model="$SCRIPT_DIR/stable-diffusion-webui/models/Stable-diffusion/Deliberate_v2.safetensors" # base model path | 底模路径
 is_v2_model=0                             # SD2.0 model | SD2.0模型 2.0模型下 clip_skip 默认无效
 parameterization=0                        # parameterization | 参数化 本参数需要和 V2 参数同步使用 实验性功能
 train_data_dir="$SCRIPT_DIR/_train_data"  # train dataset path | 训练数据集路径
@@ -13,8 +13,8 @@ reg_data_dir=""                           # directory for regularization images 
 # Network settings | 网络设置
 network_module="networks.lora" # 在这里将会设置训练的网络种类，默认为 networks.lora 也就是 LoRA 训练。如果你想训练 LyCORIS（LoCon、LoHa） 等，则修改这个值为 lycoris.kohya
 network_weights=""             # pretrained weights for LoRA network | 若需要从已有的 LoRA 模型上继续训练，请填写 LoRA 模型路径。
-network_dim=32                 # network dim | 常用 4~128，不是越大越好
-network_alpha=32               # network alpha | 常用与 network_dim 相同的值或者采用较小的值，如 network_dim的一半 防止下溢。默认值为 1，使用较小的 alpha 需要提升学习率。
+network_dim=64                 # network dim | 常用 4~128，不是越大越好
+network_alpha=64               # network alpha | 常用与 network_dim 相同的值或者采用较小的值，如 network_dim的一半 防止下溢。默认值为 1，使用较小的 alpha 需要提升学习率。
 
 # Train related params | 训练相关参数
 resolution="512,512"  # image resolution w,h. 图片分辨率，宽,高。支持非正方形，但必须是 64 倍数。
@@ -39,7 +39,7 @@ lr_warmup_steps=0                   # warmup steps | 学习率预热步数，lr_
 lr_restart_cycles=1                 # cosine_with_restarts restart cycles | 余弦退火重启次数，仅在 lr_scheduler 为 cosine_with_restarts 时起效。
 
 # Output settings | 输出设置
-output_name="jing"           # output model name | 模型保存名称
+output_name="works"         # output model name | 模型保存名称
 save_model_as="safetensors" # model save ext | 模型保存格式 ckpt, pt, safetensors
 
 # Resume training state | 恢复训练设置
@@ -157,3 +157,5 @@ python -m accelerate.commands.launch ${launchArgs[@]} --num_cpu_threads_per_proc
   --max_bucket_reso=$max_bucket_reso \
   --keep_tokens=$keep_tokens \
   --xformers --shuffle_caption ${extArgs[@]}
+
+cp ${SCRIPT_DIR}/_output/works.safetensors ${SCRIPT_DIR}/stable-diffusion-webui/models/Lora/
