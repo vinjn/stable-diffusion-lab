@@ -22,9 +22,14 @@ call wget https://huggingface.co/digiplay/LORA/resolve/main/add_detail.safetenso
 call wget https://huggingface.co/digiplay/LORA/resolve/main/add_saturation.safetensors -N -P models/Lora/
 call wget https://huggingface.co/digiplay/LORA/resolve/main/add_sharpness.safetensors -N -P models/Lora/
 call wget https://huggingface.co/digiplay/LORA/resolve/main/epi_noiseoffset2.safetensors -N -P models/Lora/
-call wget https://huggingface.co/JCTN/lora/resolve/main/LowRA.safetensors -N -P models/Lora
-call wget https://huggingface.co/JCTN/lora/resolve/main/lit.safetensors -N -P models/Lora
-call wget https://huggingface.co/JCTN/lora/resolve/main/COOLKIDS_MERGE_V2.5.safetensors -N -P models/Lora
+call wget https://huggingface.co/JCTN/lora/resolve/main/LowRA.safetensors -N -P models/Lora/
+call wget https://huggingface.co/JCTN/lora/resolve/main/lit.safetensors -N -P models/Lora/
+call wget https://huggingface.co/JCTN/lora/resolve/main/COOLKIDS_MERGE_V2.5.safetensors -N -P models/Lora/
+
+@REM embeddings
+call wget https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors -N -P embeddings/
+call wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/bad-hands-5.pt -N -P embeddings/
+call wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/NG_DeepNegative_V1_75T.ptpt -N -P embeddings/
 
 set COMMANDLINE_ARGS=--xformers
 webui.bat
