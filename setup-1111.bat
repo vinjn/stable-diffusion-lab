@@ -7,7 +7,7 @@ pushd extensions
 git clone https://github.com/Mikubill/sd-webui-controlnet.git
 git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git
 git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler.git
-git clone https://github.com/kohya-ss/sd-webui-additional-networks.git
+@REM git clone https://github.com/kohya-ss/sd-webui-additional-networks.git
 git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git
 git clone https://github.com/some9000/StylePile.git
 popd
@@ -29,7 +29,9 @@ call wget https://huggingface.co/JCTN/lora/resolve/main/COOLKIDS_MERGE_V2.5.safe
 @REM embeddings
 call wget https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors -N -P embeddings/
 call wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/bad-hands-5.pt -N -P embeddings/
-call wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/NG_DeepNegative_V1_75T.ptpt -N -P embeddings/
+call wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/NG_DeepNegative_V1_75T.pt -N -P embeddings/
+call wget https://huggingface.co/datasets/Nerfgun3/bad_prompt/resolve/main/bad_prompt_version2.pt -N -P embeddings/
+call wget https://huggingface.co/gemasai/verybadimagenegative_v1.3/resolve/main/verybadimagenegative_v1.3.pt -N -P embeddings/
 
 set COMMANDLINE_ARGS=--xformers
 webui.bat
