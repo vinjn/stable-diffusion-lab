@@ -12,6 +12,10 @@ git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git
 git clone https://github.com/some9000/StylePile.git
 popd
 
+@REM control net
+call wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth -N -P extensions/sd-webui-controlnet/models
+call wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth -N -P extensions/sd-webui-controlnet/models
+
 @REM base models
 call wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v2.safetensors -N -P models/Stable-diffusion/
 call wget https://huggingface.co/SG161222/Realistic_Vision_V5.1_noVAE/resolve/main/Realistic_Vision_V5.1_fp16-no-ema.safetensors -N -P models/Stable-diffusion/
