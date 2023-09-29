@@ -1,0 +1,3 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/stable-diffusion-webui/venv/Scripts/python.exe"
+}

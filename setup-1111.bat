@@ -40,3 +40,5 @@ wget https://huggingface.co/gemasai/verybadimagenegative_v1.3/resolve/main/veryb
 set COMMANDLINE_ARGS=--xformers
 webui.bat
 popd
+
+venv\Scripts\python -m pip install viztracer

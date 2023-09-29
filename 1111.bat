@@ -12,5 +12,5 @@ set COMMANDLINE_ARGS=--api --xformers --skip-version-check --no-hashing --skip-p
 
 @REM start "" /B http://localhost:7860/
 
-call webui.bat
-@REM "c:\p4\stable-diffusion-webui\venv\Scripts\Python.exe"  launch.py 
+@REM call webui.bat
+%~dp0\stable-diffusion-webui\venv\Scripts\Python.exe  launch.py 
