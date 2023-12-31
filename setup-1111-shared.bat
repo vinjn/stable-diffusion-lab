@@ -48,6 +48,16 @@ git clone https://github.com/civitai/sd_civitai_extension.git
 pushd sd_civitai_extension
 git pull
 
+git clone https://github.com/DominikDoom/a1111-sd-webui-tagcomplete.git
+pushd a1111-sd-webui-tagcomplete
+git pull
+popd
+
+git clone https://github.com/continue-revolution/sd-webui-animatediff.git
+pushd sd-webui-animatediff
+git pull
+echo "https://huggingface.co/conrevo/AnimateDiff-A1111/tree/main"
+wget https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/mm_sd15_v3.safetensors -N -P model
 popd
 
 popd
@@ -67,6 +77,7 @@ wget https://huggingface.co/digiplay/LORA/resolve/main/epi_noiseoffset2.safetens
 wget https://huggingface.co/JCTN/lora/resolve/main/LowRA.safetensors -N -P models/Lora/
 wget https://huggingface.co/JCTN/lora/resolve/main/lit.safetensors -N -P models/Lora/
 wget https://huggingface.co/JCTN/lora/resolve/main/COOLKIDS_MERGE_V2.5.safetensors -N -P models/Lora/
+wget https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/resolve/main/pytorch_lora_weights.safetensors -N -O models/Lora/lcm-lora-sdv1-5.safetensors
 
 wget https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors -N -P embeddings/
 wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/bad-hands-5.pt -N -P embeddings/
