@@ -9,7 +9,6 @@ pushd extensions
 git clone https://github.com/Mikubill/sd-webui-controlnet.git
 git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git
 git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler.git
-# git clone https://github.com/kohya-ss/sd-webui-additional-networks.git
 git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git
 git clone https://github.com/some9000/StylePile.git
 popd
@@ -44,9 +43,9 @@ sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install -y python3.10 python3.10-venv python3.10-pip
 
-export COMMANDLINE_ARGS=--xformers
+export COMMANDLINE_ARGS="--xformers --reinstall-xformers"
 # pip3 install viztracer
 python3.10 -m venv venv
-source venv/bin/activate
+# source venv/bin/activate
 ./webui.sh
 popd

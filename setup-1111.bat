@@ -7,7 +7,6 @@ pushd extensions
 git clone https://github.com/Mikubill/sd-webui-controlnet.git
 git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git
 git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler.git
-@REM git clone https://github.com/kohya-ss/sd-webui-additional-networks.git
 git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git
 git clone https://github.com/some9000/StylePile.git
 popd
