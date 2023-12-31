@@ -56,6 +56,7 @@ wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f
 wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth -N -P extensions/sd-webui-controlnet/models
 
 wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v2.safetensors -N -P models/Stable-diffusion/
+wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v5.safetensors -N -P models/Stable-diffusion/
 wget https://huggingface.co/SG161222/Realistic_Vision_V5.1_noVAE/resolve/main/Realistic_Vision_V5.1_fp16-no-ema.safetensors -N -P models/Stable-diffusion/
 
 wget https://huggingface.co/digiplay/LORA/resolve/main/add_brightness.safetensors -N -P models/Lora/
