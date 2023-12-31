@@ -39,9 +39,14 @@ wget https://huggingface.co/Neburozakusu/civitai_deposit/resolve/main/NG_DeepNeg
 wget https://huggingface.co/datasets/Nerfgun3/bad_prompt/resolve/main/bad_prompt_version2.pt -N -P embeddings/
 wget https://huggingface.co/gemasai/verybadimagenegative_v1.3/resolve/main/verybadimagenegative_v1.3.pt -N -P embeddings/
 
-COMMANDLINE_ARGS=--xformers
-sudo apt install -y python3-venv python3-pip
-pip3 install viztracer
-python3 -m venv venv
-./webui-user.sh
+# install python3.10
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install -y python3.10 python3.10-venv python3.10-pip
+
+export COMMANDLINE_ARGS=--xformers
+# pip3 install viztracer
+python3.10 -m venv venv
+source venv/bin/activate
+./webui.sh
 popd
