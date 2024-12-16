@@ -1,3 +1,4 @@
+pip install huggingface_hub==0.25.2
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 
 pushd stable-diffusion-webui
@@ -62,8 +63,10 @@ popd
 
 popd
 
-wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth -N -P extensions/sd-webui-controlnet/models
-wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth -N -P extensions/sd-webui-controlnet/models
+@REM wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth -N -P extensions/sd-webui-controlnet/models
+@REM wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth -N -P extensions/sd-webui-controlnet/models
+@REM wget https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/blob/main/control_v11p_sd15_inpaint_fp16.safetensors  -N -P extensions/sd-webui-controlnet/models
+wget https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/blob/main/control_v11p_sd15_inpaint_fp16.safetensors  -N -P extensions/sd-webui-controlnet/models
 
 wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v2.safetensors -N -P models/Stable-diffusion/
 wget https://huggingface.co/XpucT/Deliberate/resolve/main/Deliberate_v5.safetensors -N -P models/Stable-diffusion/
