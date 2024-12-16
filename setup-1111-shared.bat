@@ -2,66 +2,22 @@ pip install huggingface_hub==0.25.2
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 
 pushd stable-diffusion-webui
-git pull
-
 pushd extensions
 git clone https://github.com/Mikubill/sd-webui-controlnet.git
-pushd sd-webui-controlnet
-git pull
-
-popd
 git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git
-pushd Stable-Diffusion-Webui-Civitai-Helper
-git pull
-popd
-
 git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler.git
-pushd sd-webui-agent-scheduler
-git pull
-popd
-
 git clone https://github.com/zanllp/sd-webui-infinite-image-browsing.git
-pushd sd-webui-infinite-image-browsing
-git pull
-popd
-
+git clone https://github.com/Uminosachi/sd-webui-inpaint-anything.git
 git clone https://github.com/alemelis/sd-webui-ar.git
-pushd sd-webui-ar
-git pull
-popd
-
 git clone https://github.com/camenduru/stable-diffusion-webui-artists-to-study.git
-pushd stable-diffusion-webui-artists-to-study
-git pull
-popd
-
 git clone https://github.com/Bing-su/adetailer.git
-pushd adetailer
-git pull
-popd
-
 git clone https://github.com/aigc-apps/sd-webui-EasyPhoto.git
-pushd sd-webui-EasyPhoto
-git pull
-popd
-
 git clone https://github.com/civitai/sd_civitai_extension.git
-pushd sd_civitai_extension
-git pull
-
 git clone https://github.com/DominikDoom/a1111-sd-webui-tagcomplete.git
-pushd a1111-sd-webui-tagcomplete
-git pull
-popd
-
 git clone https://github.com/continue-revolution/sd-webui-animatediff.git
-pushd sd-webui-animatediff
-git pull
-echo "https://huggingface.co/conrevo/AnimateDiff-A1111/tree/main"
-wget https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/mm_sd15_v3.safetensors -N -P model
 popd
 
-popd
+wget https://huggingface.co/conrevo/AnimateDiff-A1111/resolve/main/motion_module/mm_sd15_v3.safetensors -N -P extensions/sd-webui-animatediff/model
 
 @REM wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth -N -P extensions/sd-webui-controlnet/models
 @REM wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth -N -P extensions/sd-webui-controlnet/models
